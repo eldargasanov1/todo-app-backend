@@ -13,6 +13,8 @@ import {
 import { checkAuth, handleValidationErrors } from './utils/index.js';
 import { UserController, TaskController } from './controllers/index.js';
 
+console.log(process.env.PORT);
+
 mongoose
 	.connect(process.env.NODE_MONGODB)
 	.then(() => console.log('DB ok'))
