@@ -14,7 +14,7 @@ import { checkAuth, handleValidationErrors } from './utils/index.js';
 import { UserController, TaskController } from './controllers/index.js';
 
 mongoose
-	.connect(process.env.MONGODB_URI)
+	.connect(process.env.NODE_MONGODB)
 	.then(() => console.log('DB ok'))
 	.catch(err => console.log('DB error', err));
 
