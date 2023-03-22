@@ -13,7 +13,7 @@ import {
 import { checkAuth, handleValidationErrors } from './utils/index.js';
 import { UserController, TaskController } from './controllers/index.js';
 
-console.log(process.env.PORT);
+console.log(process.env);
 
 mongoose
 	.connect(process.env.NODE_MONGODB)
