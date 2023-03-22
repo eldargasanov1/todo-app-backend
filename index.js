@@ -17,7 +17,7 @@ console.log(process.env);
 mongoose
 	.connect(process.env.MONGODB_URI)
 	.then(() => console.log('DB ok'))
-	.catch(() => console.log('DB error', err));
+	.catch(err => console.log('DB error', err));
 
 const app = express();
 
