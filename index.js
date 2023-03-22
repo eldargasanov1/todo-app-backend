@@ -2,6 +2,7 @@ import express from 'express';
 import multer from 'multer';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import fs from 'fs';
 
 import {
 	registerValidation,
@@ -21,6 +22,9 @@ const app = express();
 
 const storage = multer.diskStorage({
 	destination: (_, __, cb) => {
+		if (!fs.existsSync('uploads')) {
+			fs.mkdirSync('uploads');
+		}
 		cb(null, 'uploads');
 	},
 	filename: (_, file, cb) => {
